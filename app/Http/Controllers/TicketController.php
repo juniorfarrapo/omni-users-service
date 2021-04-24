@@ -56,7 +56,7 @@ class TicketController extends Controller
         else
             return response()->json([
                 'success' => false,
-                'message' => 'Post not added'
+                'message' => 'Ticket not added'
             ], 500);
     }
 
@@ -68,7 +68,7 @@ class TicketController extends Controller
         if (!$ticket) {
             return response()->json([
                 'success' => false,
-                'message' => 'Post not found'
+                'message' => 'Ticket not found'
             ], 400);
         }
 
@@ -81,7 +81,7 @@ class TicketController extends Controller
         else
             return response()->json([
                 'success' => false,
-                'message' => 'Post can not be updated'
+                'message' => 'Ticket can not be updated'
             ], 500);
     }
 
@@ -93,7 +93,7 @@ class TicketController extends Controller
         if (!$ticket) {
             return response()->json([
                 'success' => false,
-                'message' => 'Post not found'
+                'message' => 'Ticket not found'
             ], 400);
         }
 
@@ -104,7 +104,7 @@ class TicketController extends Controller
         } else {
             return response()->json([
                 'success' => false,
-                'message' => 'Post can not be deleted'
+                'message' => 'Ticket can not be deleted'
             ], 500);
         }
     }

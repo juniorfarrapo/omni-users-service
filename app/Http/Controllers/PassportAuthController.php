@@ -17,11 +17,13 @@ class PassportAuthController extends Controller
             'name' => 'required|min:4',
             'email' => 'required|email',
             'password' => 'required|min:8',
+            'document_number_cpf' => 'required|min:11',
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'document_number_cpf' => $request->document_number_cpf,
             'password' => bcrypt($request->password)
         ]);
 
@@ -46,5 +48,28 @@ class PassportAuthController extends Controller
         } else {
             return response()->json(['error' => 'Unauthorised'], 401);
         }
+    }
+
+    /**
+     * Profile
+     */
+    public function profile()
+    {
+        $user = auth()->user();
+
+        if (!$user) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Unauthorised'
+            ], 401);
+        }
+
+        // Remove some data from user
+        unset($user['password'], $user['email_verified_at'], $user['created_at'], $user['updated_at']);
+
+        return response()->json([
+            'success' => true,
+            'data' => auth()->user()->toArray()
+        ], 200);
     }
 }

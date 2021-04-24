@@ -16,9 +16,22 @@ use App\Http\Controllers\TicketController;
 |
 */
 
+// Public methods
 Route::post('register', [PassportAuthController::class, 'register']);
 Route::post('login', [PassportAuthController::class, 'login']);
 
+// Private authorized methods
 Route::middleware('auth:api')->group(function () {
+
+    // Restfull Tickets CRUD
     Route::resource('tickets', TicketController::class);
+
+    // GET Returns data from authorized user
+    Route::get('profile', [PassportAuthController::class, 'profile']);
+
+    // // PUT Update data from authorized user
+    // Route::put('profile', [PassportAuthController::class, 'update']);
+
+    // // PUT Update password from authorized user
+    // Route::put('changePassword', [PassportAuthController::class, 'changePassword']);
 });
