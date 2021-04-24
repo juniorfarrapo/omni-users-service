@@ -26,6 +26,8 @@ class User extends Authenticatable
         'social_name',
         'document_number_cpf',
         'birthday',
+        'phonenumber_1',
+        'phonenumber_2'
     ];
 
     /**

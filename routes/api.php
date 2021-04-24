@@ -30,7 +30,7 @@ Route::middleware('auth:api')->group(function () {
     Route::get('profile', [PassportAuthController::class, 'profile']);
 
     // // PUT Update data from authorized user
-    // Route::put('profile', [PassportAuthController::class, 'update']);
+    Route::put('profile', [PassportAuthController::class, 'update']);
 
     // // PUT Update password from authorized user
     // Route::put('changePassword', [PassportAuthController::class, 'changePassword']);

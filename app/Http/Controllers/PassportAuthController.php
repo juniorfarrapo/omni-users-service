@@ -55,7 +55,7 @@ class PassportAuthController extends Controller
      */
     public function profile()
     {
-        $user = auth()->user();
+        $user = User::find(auth()->user()->id);
 
         if (!$user) {
             return response()->json([
@@ -64,12 +64,34 @@ class PassportAuthController extends Controller
             ], 401);
         }
 
-        // Remove some data from user
-        unset($user['password'], $user['email_verified_at'], $user['created_at'], $user['updated_at']);
-
         return response()->json([
             'success' => true,
             'data' => auth()->user()->toArray()
         ], 200);
+    }
+
+    // Update a existing user
+    public function update(Request $request)
+    {
+        $user = User::find(auth()->user()->id);
+
+        if (!$user) {
+            return response()->json([
+                'success' => false,
+                'message' => 'User not found'
+            ], 400);
+        }
+
+        $updated = $user->fill($request->all())->save();
+
+        if ($updated)
+            return response()->json([
+                'success' => true
+            ]);
+        else
+            return response()->json([
+                'success' => false,
+                'message' => 'User can not be updated'
+            ], 500);
     }
 }
