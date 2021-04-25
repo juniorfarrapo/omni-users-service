@@ -1,4 +1,4 @@
-# GeMark Changelog
+# Omni-Users-Service API Changelog
 
 ## Releases
 ## [1.0.0] - 2021-04-24
@@ -6,6 +6,10 @@
 * 
 
 ## Added
-* Criado CRUD para Tickets
-* Criado metodos para login, cadastro, atualização, alteração de senha e perfil do usuário
+* CRUD para Tickets
+* Métodos para login, cadastro, atualização, alteração de senha, logout e perfil com as informações do usuário
 
+## To Do
+* Adicionar validação de formatação das informações de CEP, telefone e CPF
+* Implementar testes unitários para validar a criação de usuários e tokens
+* Implementar testes de integração para validar as rotas da API e a segurança via JWT

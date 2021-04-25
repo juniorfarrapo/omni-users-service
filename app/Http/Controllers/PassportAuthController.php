@@ -11,7 +11,11 @@ use Illuminate\Support\Facades\Hash;
 class PassportAuthController extends Controller
 {
     /**
-     * Registration
+     * register method
+     *
+     * Create a new user account
+     *
+     * @return \Illuminate\Http\Response
      */
     public function register(Request $request)
     {
@@ -35,7 +39,11 @@ class PassportAuthController extends Controller
     }
 
     /**
-     * Login
+     * login method
+     *
+     * Return a jwt to auth user
+     *
+     * @return \Illuminate\Http\Response
      */
     public function login(Request $request)
     {
@@ -53,7 +61,11 @@ class PassportAuthController extends Controller
     }
 
     /**
-     * Profile
+     * profile method
+     *
+     * Return a user auth data
+     *
+     * @return \Illuminate\Http\Response
      */
     public function profile()
     {
@@ -62,7 +74,7 @@ class PassportAuthController extends Controller
         if (!$user) {
             return response()->json([
                 'success' => false,
-                'message' => 'Unauthorised'
+                'message' => 'Not user login'
             ], 401);
         }
 
@@ -72,7 +84,13 @@ class PassportAuthController extends Controller
         ], 200);
     }
 
-    // Update a existing user
+    /**
+     * update method
+     *
+     * Update a user auth data
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request)
     {
         $this->validate($request, [
@@ -87,8 +105,8 @@ class PassportAuthController extends Controller
         if (!$user) {
             return response()->json([
                 'success' => false,
-                'message' => 'User not found'
-            ], 400);
+                'message' => 'Not user login'
+            ], 401);
         }
 
         $updated = $user->fill($request->all())->save();
@@ -96,7 +114,7 @@ class PassportAuthController extends Controller
         if ($updated)
             return response()->json([
                 'success' => true
-            ], 201);
+            ], 200);
         else
             return response()->json([
                 'success' => false,
@@ -104,6 +122,13 @@ class PassportAuthController extends Controller
             ], 500);
     }
 
+    /**
+     * changePassword method
+     *
+     * Update password from user auth
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function changePassword(Request $request){
         $this->validate($request, [
             'oldPassword' => 'required|min:8',
@@ -152,11 +177,27 @@ class PassportAuthController extends Controller
         }
     }
 
+    /**
+     * logout method
+     *
+     * Revoke a token from user auth
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function logout() {
         $user = auth()->user()->token();
 
         if ($user) {
             $user->revoke();
+
+            return response()->json([
+                'success' => true
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Not user login'
+            ], 401);
         }
     }
 }

@@ -35,6 +35,7 @@ Route::middleware('auth:api')->group(function () {
     // PUT Update password from authorized user
     Route::post('changePassword', [PassportAuthController::class, 'changePassword']);
 
+    // POST Revoke a user token
     Route::post('logout', [PassportAuthController::class, 'logout']);
 
 });
