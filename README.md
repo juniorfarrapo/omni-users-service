@@ -64,9 +64,13 @@ You need to add in all header:
 ```
 
 ### User Login
+
 **URL** : `/api/login/`
+
 **Method** : `POST`
+
 **Auth required** : NO
+
 **Data constraints**
 ```json
 {
@@ -74,6 +78,7 @@ You need to add in all header:
 "password": ["string"]
 }
 ```
+
 **Response**
 ```json
 {
@@ -82,9 +87,13 @@ You need to add in all header:
 ```
 
 ### User Profile
+
 **URL** : `/api/profile/`
+
 **Method** : `GET`
+
 **Auth required** : YES
+
 **Header**
 ```json
 {
@@ -92,6 +101,7 @@ You need to add in all header:
 "Accept": ["aplication/json"]
 }
 ```
+
 **Response**
 ```json
 {
@@ -121,9 +131,13 @@ You need to add in all header:
 ```
 
 ### User Profile Update
+
 **URL** : `/api/profile/`
+
 **Method** : `PUT`
+
 **Auth required** : YES
+
 **Header**
 ```json
 {
@@ -131,6 +145,7 @@ You need to add in all header:
 "Accept": ["aplication/json"]
 }
 ```
+
 **Data constraints**
 ```json
 {
@@ -158,9 +173,13 @@ You need to add in all header:
 ```
 
 ### User Change Password
+
 **URL** : `/api/changePassword/`
+
 **Method** : `POST`
+
 **Auth required** : YES
+
 **Header**
 ```json
 {
@@ -168,6 +187,7 @@ You need to add in all header:
 "Accept": ["aplication/json"]
 }
 ```
+
 **Data constraints**
 ```json
 {
@@ -185,9 +205,13 @@ You need to add in all header:
 ```
 
 ### User Logout (Revoke user token)
+
 **URL** : `/api/logout/`
+
 **Method** : `POST`
+
 **Auth required** : YES
+
 **Header**
 ```json
 {
@@ -204,9 +228,13 @@ You need to add in all header:
 ```
 
 ### Ticket Create/Update
+
 **URL** : `/api/tickets/{$id}`
+
 **Method** : `POST, PUT`
+
 **Auth required** : YES
+
 **Header**
 ```json
 {
@@ -214,6 +242,7 @@ You need to add in all header:
 "Accept": ["aplication/json"]
 }
 ```
+
 **Data constraints**
 ```json
 {
@@ -234,10 +263,15 @@ You need to add in all header:
   }
 }
 ```
+
 ### Ticket Read
+
 **URL** : `/api/tickets/{$id}`
+
 **Method** : `GET`
+
 **Auth required** : YES
+
 **Header**
 ```json
 {
@@ -245,6 +279,7 @@ You need to add in all header:
 "Accept": ["aplication/json"]
 }
 ```
+
 **Response**
 ```json
 {
@@ -258,10 +293,15 @@ You need to add in all header:
   }
 }
 ```
+
 ### Ticket Delete
+
 **URL** : `/api/tickets/{$id}`
+
 **Method** : `DELETE`
+
 **Auth required** : YES
+
 **Header**
 ```json
 {
@@ -269,6 +309,7 @@ You need to add in all header:
 "Accept": ["aplication/json"]
 }
 ```
+
 **Response**
 ```json
 {
