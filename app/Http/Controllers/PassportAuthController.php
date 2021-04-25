@@ -30,7 +30,19 @@ class PassportAuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'document_number_cpf' => $request->document_number_cpf,
-            'password' => bcrypt($request->password)
+            'password' => bcrypt($request->password),
+            'gender' => $request->gender,
+            'social_name' => $request->social_name,
+            'birthday' => $request->birthday,
+            'phonenumber_1' => $request->phonenumber_1,
+            'phonenumber_2' => $request->phonenumber_2,
+            'number' => $request->number,
+            'neighborhood' => $request->neighborhood,
+            'city' => $request->city,
+            'state' => $request->state,
+            'zipcode' => $request->zipcode,
+            'complement' => $request->complement,
+            'address' => $request->address
         ]);
 
         $token = $user->createToken('LaravelAuthApp')->accessToken;

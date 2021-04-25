@@ -28,7 +28,6 @@ class User extends Authenticatable
         'birthday',
         'phonenumber_1',
         'phonenumber_2',
-        'phonenumber_2',
         'number',
         'neighborhood',
         'city',
