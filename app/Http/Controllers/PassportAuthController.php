@@ -151,4 +151,12 @@ class PassportAuthController extends Controller
             ], 400);
         }
     }
+
+    public function logout() {
+        $user = auth()->user()->token();
+
+        if ($user) {
+            $user->revoke();
+        }
+    }
 }

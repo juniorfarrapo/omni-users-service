@@ -29,9 +29,12 @@ Route::middleware('auth:api')->group(function () {
     // GET Returns data from authorized user
     Route::get('profile', [PassportAuthController::class, 'profile']);
 
-    // // PUT Update data from authorized user
+    // PUT Update data from authorized user
     Route::put('profile', [PassportAuthController::class, 'update']);
 
-    // // PUT Update password from authorized user
+    // PUT Update password from authorized user
     Route::post('changePassword', [PassportAuthController::class, 'changePassword']);
+
+    Route::post('logout', [PassportAuthController::class, 'logout']);
+
 });
