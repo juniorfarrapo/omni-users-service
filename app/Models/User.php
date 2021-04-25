@@ -27,7 +27,14 @@ class User extends Authenticatable
         'document_number_cpf',
         'birthday',
         'phonenumber_1',
-        'phonenumber_2'
+        'phonenumber_2',
+        'phonenumber_2',
+        'number',
+        'neighborhood',
+        'city',
+        'state',
+        'zipcode',
+        'complement'
     ];
 
     /**
