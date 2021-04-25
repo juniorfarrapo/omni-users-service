@@ -7,5 +7,5 @@
 
 ## Added
 * Criado CRUD para Tickets
-* Criado metodos para login, cadastro, atualização e perfil do usuário
+* Criado metodos para login, cadastro, atualização, alteração de senha e perfil do usuário
 

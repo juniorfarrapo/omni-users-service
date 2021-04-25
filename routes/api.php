@@ -33,5 +33,5 @@ Route::middleware('auth:api')->group(function () {
     Route::put('profile', [PassportAuthController::class, 'update']);
 
     // // PUT Update password from authorized user
-    // Route::put('changePassword', [PassportAuthController::class, 'changePassword']);
+    Route::post('changePassword', [PassportAuthController::class, 'changePassword']);
 });

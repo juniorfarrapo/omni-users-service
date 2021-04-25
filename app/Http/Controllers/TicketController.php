@@ -17,7 +17,7 @@ class TicketController extends Controller
         return response()->json([
             'success' => true,
             'data' => $tickets
-        ]);
+        ], 200);
     }
 
     // Return data from specify id ticket
