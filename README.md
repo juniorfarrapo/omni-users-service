@@ -27,9 +27,13 @@ You need to add in all header:
 ```
 
 ### User Create
+
 **URL** : `/api/register/`
+
 **Method** : `POST`
+
 **Auth required** : NO
+
 **Data constraints**
 ```json
 {
@@ -51,6 +55,7 @@ You need to add in all header:
 "address": ["string"]
 }
 ```
+
 **Response**
 ```json
 {
