@@ -1,0 +1,283 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"
+    integrity="sha512-sR3EKGp4SG8zs7B0MEUxDeq8rw9wsuGVYNfbbO/GLCJ59LBE4baEfQBVsP2Y/h2n8M19YV1mujFANO1yA3ko7Q=="
+    crossorigin="anonymous"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <title>Me Ajuda?</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+        <div class="container">
+            <a class="navbar-brand" href="#">Me Ajuda?</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="return logout();" href="#">Sair</a>
+                    </li>                    
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <main class="login-form">
+        <div class="cotainer">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">Meus Dados</div>
+                        <div class="card-body">
+                            <h6>Dados Pessoais</h6>
+                            <div class="col-md-6 offset-md-4" id="warning-login" style="opacity: 0;">
+                                <h6 style="color: red">Os dados informados não são válidos.</h6>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label text-md-right">Nome Completo</label>
+                                <div class="col-md-6">
+                                    <input maxlength="100" id="nome" readonly="readonly" name="nome" type="text" disable
+                                        class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label text-md-right">Nome Social</label>
+                                <div class="col-md-6">
+                                    <input maxlength="100" id="nome_social" readonly="readonly" name="nome_social"
+                                        type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label text-md-right">CPF</label>
+                                <div class="col-md-6">
+                                    <input maxlength="15" id="cpf" readonly="readonly" name="cpf" type="text"
+                                        class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label text-md-right">Data de Nascimento</label>
+                                <div class="col-md-6">
+                                    <input maxlength="15" id="dt_nascimento" readonly="readonly" name="dt_nascimento"
+                                        type="date" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label text-md-right">Telefone</label>
+                                <div class="col-md-6">
+                                    <input maxlength="15" id="telefone" readonly="readonly" name="telefone" type="text"
+                                        class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail</label>
+                                <div class="col-md-6">
+                                    <input type="email" id="email" readonly="readonly" class="form-control"
+                                        name="email-address">
+                                </div>
+                            </div>
+
+                            <h6>Endereço</h6>
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label text-md-right">CEP</label>
+                                <div class="col-md-6">
+                                    <input maxlength="17" id="cep" readonly="readonly" name="cep" type="text"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label text-md-right">Estado</label>
+                                <div class="col-md-6">
+                                    <input maxlength="10" id="estado" readonly="readonly" name="estado" type="text"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label text-md-right">Cidade</label>
+                                <div class="col-md-6">
+                                    <input maxlength="50" id="cidade" readonly="readonly" name="cidade" type="text"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label text-md-right">Bairro</label>
+                                <div class="col-md-6">
+                                    <input maxlength="50" id="bairro" readonly="readonly" name="bairro" type="text"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label text-md-right">Rua</label>
+                                <div class="col-md-6">
+                                    <input maxlength="100" id="rua" readonly="readonly" name="rua" type="text"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label text-md-right">Número</label>
+                                <div class="col-md-6">
+                                    <input maxlength="10" id="numero" readonly="readonly" name="numero" type="text"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label text-md-right">Complemento</label>
+                                <div class="col-md-6">
+                                    <input maxlength="100" id="complemento" readonly="readonly" name="complemento"
+                                        type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+<script>
+    // Variáveis utilizadas pelo js
+    var nome = jQuery('#nome');
+    var nome_social = jQuery('#nome_social');
+    var cpf = jQuery('#cpf');
+    var dt_nascimento = jQuery('#dt_nascimento');
+    var telefone = jQuery('#telefone');
+    var email = jQuery('#email');
+    var password = jQuery('#password');
+    var cep = jQuery('#cep');
+    var estado = jQuery('#estado');
+    var cidade = jQuery('#cidade');
+    var bairro = jQuery('#bairro');
+    var rua = jQuery('#rua');
+    var numero = jQuery('#numero');
+    var complemento = jQuery('#complemento');
+
+    // Carrega as informações conforme o token salvo local
+    $(document).ready(function () {
+        // Procura o token salvo
+        var token = localStorage.getItem('token');
+
+        if (token) {
+            $.ajax({
+                url: "http://localhost:8000/api/profile",
+                type: "GET",
+                contentType: "application/json",
+                accept: "application/json",
+                dataType: "json",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                },
+                async: false,
+                success: function (response) {
+                    if (typeof response === "object")
+                        user = response.data;
+
+                    if (user) {
+
+                        nome.val(user.name);
+                        nome_social.val(user.social_name);
+                        cpf.val(user.document_number_cpf);
+                        dt_nascimento.val(user.birthday);
+                        telefone.val(user.phonenumber_1);
+                        email.val(user.email);
+                        cep.val(user.zipcode);
+                        estado.val(user.state);
+                        cidade.val(user.city);
+                        bairro.val(user.neighborhood);
+                        rua.val(user.address);
+                        numero.val(user.number);
+                        complemento.val(user.complement);
+                    } else {
+
+                        alert('Os dados informados não estão corretos.\nPor favor, verifique e tente novamente.');
+                        console.log('Os dados informados não estão corretos.');
+                        console.log(dataResponse.error);
+                    }
+                },
+                error: function (response) {
+                    console.log('Erro na requisição: ', response.responseJSON);
+                    window.location.replace("login.html");
+                    alert('Efetue o login novamente.');
+                }
+            });
+        } else {
+            window.location.replace("login.html");
+            alert('Efetue o login novamente.');
+        }
+    });
+
+    // Apaga o token da url
+    function logout(){
+        // Procura o token salvo
+        var token = localStorage.getItem('token');
+
+        if (token) {
+            $.ajax({
+                url: "http://localhost:8000/api/logout",
+                type: "POST",
+                contentType: "application/json",
+                accept: "application/json",
+                dataType: "json",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                },
+                async: false,
+                success: function (response) {
+                    console.log(response);
+                    if (typeof response === "object")
+                        success = response.success;
+
+                    if (success) {
+                        console.log('Logout realizado sucesso');                        
+                    } else {
+                        console.log('Logout não realizado ou token inválido.');
+                        console.log(dataResponse.error);                        
+                    }
+                },
+                error: function (response) {
+                    console.log('Erro na requisição: ', response.responseJSON);                    
+                }
+            });
+        }
+
+        alert('Efetue o login novamente.');
+        window.location.replace("login.html");
+        localStorage.setItem('token', '');
+    }
+</script>
+
+</html>

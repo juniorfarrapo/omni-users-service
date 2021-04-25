@@ -1,0 +1,329 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"
+        integrity="sha512-sR3EKGp4SG8zs7B0MEUxDeq8rw9wsuGVYNfbbO/GLCJ59LBE4baEfQBVsP2Y/h2n8M19YV1mujFANO1yA3ko7Q=="
+        crossorigin="anonymous"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <title>Me Ajuda?</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+        <div class="container">
+            <a class="navbar-brand" href="#">Me Ajuda?</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Entrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Criar Conta</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <main class="login-form">
+        <div class="cotainer">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">Criar Conta</div>
+                        <div class="card-body">
+                            <form id="register">
+                                <h6>Dados Pessoais</h6>
+                                <div class="col-md-6 offset-md-4" id="warning-login" style="opacity: 0;">
+                                    <h6 style="color: red">Os dados informados não são válidos.</h6>                                        
+                                </div>   
+                                
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Nome Completo</label>
+                                    <div class="col-md-6">
+                                        <input maxlength="100" id="nome" name="nome" type="text" class="form-control"
+                                        required placeholder="Informe seu Nome Completo">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Nome Social</label>
+                                    <div class="col-md-6">
+                                        <input maxlength="100" id="nome_social" name="nome_social" type="text" class="form-control"
+                                        placeholder="Informe seu Nome Social">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">CPF</label>
+                                    <div class="col-md-6">
+                                        <input maxlength="15" id="cpf" name="cpf" type="text" class="form-control"
+                                        required placeholder="Informe seu CPF">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Data de Nascimento</label>
+                                    <div class="col-md-6">
+                                        <input maxlength="15" id="dt_nascimento" name="dt_nascimento" type="date" class="form-control"
+                                        required placeholder="Informe sua data de nascimento">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Telefone</label>
+                                    <div class="col-md-6">
+                                        <input maxlength="15" id="telefone" name="telefone" type="text" class="form-control"
+                                        required placeholder="Informe um telefone de contato">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="email_address"
+                                        class="col-md-4 col-form-label text-md-right">E-Mail</label>
+                                    <div class="col-md-6">
+                                        <input type="email" id="email" class="form-control" name="email-address"
+                                            required autofocus placeholder="Informe seu E-Mail">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="password" class="col-md-4 col-form-label text-md-right">Senha</label>
+                                    <div class="col-md-6">
+                                        <input type="password" id="password" class="form-control" name="password"
+                                            required placeholder="Defina uma Senha">
+                                    </div>
+                                </div>      
+                                
+                                <div class="form-group row">
+                                    <label for="password" class="col-md-4 col-form-label text-md-right">Confirmar Senha</label>
+                                    <div class="col-md-6">
+                                        <input type="password" id="confirm_password" class="form-control" name="confirm_password"
+                                            required placeholder="Digite novamente a Senha">
+                                    </div>
+                                </div>  
+                                
+                                <h6>Endereço</h6>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">CEP</label>
+                                    <div class="col-md-6">
+                                        <input maxlength="17" id="cep" name="cep" type="text" class="form-control"
+                                        placeholder="Informe seu CEP">
+                                    </div>                                    
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Estado</label>
+                                    <div class="col-md-6">
+                                        <select name="estado" id="estado" class="form-control">
+                                            <option value="0" disabled selected>Estado</option>
+                                            <option value="AC">AC</option>
+                                            <option value="AL">AL</option>
+                                            <option value="AP">AP</option>
+                                            <option value="AM">AM</option>
+                                            <option value="BA">BA</option>
+                                            <option value="CE">CE</option>
+                                            <option value="DF">DF</option>
+                                            <option value="ES">ES</option>
+                                            <option value="GO">GO</option>
+                                            <option value="MA">MA</option>
+                                            <option value="MT">MT</option>
+                                            <option value="MS">MS</option>
+                                            <option value="MG">MG</option>
+                                            <option value="PA">PA</option>
+                                            <option value="PB">PB</option>
+                                            <option value="PR">PR</option>
+                                            <option value="PE">PE</option>
+                                            <option value="PI">PI</option>
+                                            <option value="RJ">RJ</option>
+                                            <option value="RN">RN</option>
+                                            <option value="RS">RS</option>
+                                            <option value="RO">RO</option>
+                                            <option value="RR">RR</option>
+                                            <option value="SC">SC</option>
+                                            <option value="SP">SP</option>
+                                            <option value="SE">SE</option>
+                                            <option value="TO">TO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Cidade</label>
+                                    <div class="col-md-6">
+                                        <input maxlength="50" id="cidade" name="cidade" type="text" class="form-control"
+                                        placeholder="Informe sua Rua">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Bairro</label>
+                                    <div class="col-md-6">
+                                        <input maxlength="50" id="bairro" name="bairro" type="text" class="form-control"
+                                        placeholder="Informe seu Bairro">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Rua</label>
+                                    <div class="col-md-6">                                
+                                        <input maxlength="100" id="rua" name="rua" type="text" class="form-control"
+                                        placeholder="Informe sua Rua">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Número</label>
+                                    <div class="col-md-6">
+                                        <input maxlength="10" id="numero" name="numero" type="text" class="form-control"
+                                        placeholder="Informe sua Rua">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Complemento</label>
+                                    <div class="col-md-6">
+                                        <input maxlength="100" id="complemento" name="complemento" type="text" class="form-control"
+                                        placeholder="Complemento">
+                                    </div>
+                                </div>
+                                
+
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Criar
+                                    </button>
+                                </div>  
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+<script>
+    // Variáveis utilizadas pelo js
+    var nome = jQuery('#nome');
+    var nome_social = jQuery('#nome_social');
+    var cpf = jQuery('#cpf');
+    var dt_nascimento = jQuery('#dt_nascimento');
+    var telefone = jQuery('#telefone');
+    var email = jQuery('#email');
+    var password = jQuery('#password');    
+    var cep = jQuery('#cep');
+    var estado = jQuery('#estado');
+    var cidade = jQuery('#cidade');
+    var bairro = jQuery('#bairro');
+    var rua = jQuery('#rua');
+    var numero = jQuery('#numero');
+    var complemento = jQuery('#complemento');
+
+    // Adiciona as máscaras do formulário
+    $('#cpf').inputmask('999.999.999-99', {
+        'placeholder': '___.___.___-__'
+    });
+    $('#telefone').inputmask('(99) 99999-9999', {
+        'placeholder': '(__) _____-____'
+    });
+    $('#cep').inputmask('99999-999', {
+        'placeholder': '_____-___'
+    });
+
+    // Atualiza o endereço automaticamente
+    cep.blur(function () {
+
+        // Retorna o endereço do CEP informado
+        jQuery.get('https://viacep.com.br/ws/' + cep.val().replace(/\D/g, '') + '/json/unicode/', function (dados_cep) {
+            if (typeof dados_cep === "string")
+                dados_cep = JSON.parse(dados_cep);
+
+            if (dados_cep.erro === undefined) {
+                rua.val(dados_cep.logradouro);
+                bairro.val(dados_cep.bairro);
+                cidade.val(dados_cep.localidade);
+                estado.val(dados_cep.uf);
+            }
+        });
+    });
+
+    $(function () {
+        $('form').on('submit', function (e) {
+
+            e.preventDefault();
+
+            var registerData = {                
+                'name' : nome.val(),
+                'email' : email.val(),
+                'password' : password.val(),
+                // 'gender' : .val(),
+                'social_name' : nome_social.val(),
+                'document_number_cpf' : cpf.val(),
+                'birthday' : dt_nascimento.val(),
+                'phonenumber_1' : telefone.val(),
+                // 'phonenumber_2' : .val(),
+                'number' : numero.val(),
+                'neighborhood' : bairro.val(),
+                'city' : cidade.val(),
+                'state' : estado.val(),
+                'zipcode' : cep.val(),
+                'complement' : complemento.val(),
+            };
+
+            $.ajax({
+                url: "http://localhost:8000/api/register",
+                type: "POST",
+                data: JSON.stringify(registerData),
+                contentType: "application/json",
+                accept : "application/json",
+                dataType: "json",
+                async: false,
+                success: function (response) {
+                    if (typeof response === "object")
+                        token = response.token;
+
+                    if (token) {
+                        console.log('Cadastro realizado sucesso');
+                        console.log(token);
+
+                        // localStorage.setItem('token', token)
+                        window.location.replace("login.html");
+                        alert('Cadastro realizado sucesso, efetue seu login');
+                    } else {
+                        alert('Os dados informados não estão corretos.\nPor favor, verifique e tente novamente.');
+                        console.log('Os dados informados não estão corretos.');
+                        console.log(dataResponse.error);
+                    }
+                },
+                error: function (response) {                    
+                    console.log('Erro na requisição: ', response.responseJSON);
+                }
+            });
+        });
+    });
+</script>
+</html>
