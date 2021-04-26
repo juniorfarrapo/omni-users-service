@@ -1,0 +1,26 @@
+1. 
+Por ser tratar um Omnichannel onde pode ser acessível por qualquer dispositivo, isso pode gerar uma excessiva carga nos seus serviços, principalmente ser for uma aplicação desenvolvida como um monolito. Logo, é recomendado a utilização da metodologia de microserviços, onde essa aplicação que foi desenvolvida pode ser utilizada como um serviço para gestão de usuários. Sendo responsável por criar usuários e o método de login. 
+Dessa forma, é podemos configurar um banco mysql e no caso do cache do laravel para utilizar um serviço Redis, como Amazon ElastiCache for Redis. Assim, é possível ter inúmeras instâncias (exemplo: EC2 AWS) rodando o backend em laravel comunicando-se como mesmo banco de dados e redis. Assim, sendo transparente para a aplicação frontend, onde deve ser usado o IP do Elastic Load Balancing (AWS) para comunicação.
+Dessa maneira, o melhor cenário é utilizar a solução é em uma cloud. Onde podemos ter um serviço exclusivo de login e gestão de usuarios completamente escalável, conforme a carga de uso e com redução de custos nos momentos de menores cargas de acesso.
+
+2. Para o desenvolvimento de qualquer aplicação, acredito no uso fortíssimo de metodologias ágeis. Um exemplo de um novo projeto de desenvolvimento, seria primeiramente definir todos os requisitos do software e documentar todos os casos/histórias de uso, isso sendo definido pelo PM com a partificação do PO. 
+Com os requisitos documentados, podemos juntar o PM, PO e todo o time de dev, onde será realizada a tarefa definir os cards de desenvolvimento, prioridades, tecnologias, expor as dificuldades de desenvolvimento para o PM e as dúvidas do próprio time dev. Dessa forma, teremos todas as tarefas que devem ser realizadas, prazos, prioridades, níveis de dificuldade, ets.
+Essas taferas, podem ser transformadas cards onde iremos utilizar o Scrum como metodologia de dev.
+Desse modo, cada sprint definida conterá os cards que serão entregues e integrados na aplicação já em produção. Utilizando a ideia de entrega contínua.
+O time de dev pode utilizar o git-flow para trabalhar em cards sem quebrar o que já se tem desenvolvido na branch develop e main, ou por outro desenvolvedor. 
+Ao fim da sprint, realiza-se uma análise de código (code review) antes de subir o código para produção. O processo de code review acredito ser importante tanto para aumentar a confiabilidade do que está sendo entregue, como em um ambiente colaborativo, os demais dev podem dar sugestões de desenvolvimento que ajudem no aprimoramento do código trabalho.
+
+Considerando o cenário de 4 pessoas, podemos definir uma como PO, dois desenvolvedores como responsáveis de backend, uma para o frontend.
+Nesse processo, utilizamos o slack como ferramenta de comunicação, trello para definição dos cards da sprint e git flow para versionamento e controle das branchs que estão sendo utilizadas para desenvolvimento.
+
+3. Sim, desde que comecei a trabalhar com desenvolvimento, fui responsável por aplicações onde sempre tive contato direto com os PM ou os donos do produto, participando de reuniões, onde levantei requisitos, as dificuldades, defini prazos de entrega, criei meus próprios cards de desenvolvimento e coloquei a mão na massa para desenvolver. 
+Considero que sou uma pessoa aberta a mudanças, novas tecnologias, sugestões, acredito na importância de documentação de software, na qualidade do que deve ser entregue para que gere o mínimo de custo e que evite necessitar de suporte técnico contínuo a aplicação.
+
+4. Creio que uma aplicação como essa não deva possuir um backend desenvolvido como um monolito. Logo o backend deve ser composto de serviços que comunicam-se entre si, onde temos a gestão de usuários, serviço para envio de arquivos e armazemanto em nuvem, o serviço de chat talvez utilize um banco não relacional dada a proporção e volume de dados que será compartilhada. O frontend deve ser bem definido pelo time de UI/UX para que o cliente tenha a mesma visão web ou no app.
+
+5. O processo é importante, avalia conhecimentos de backend como de frontend, além de conhecimentos de documentação de software. As questões relativas a C4Model são interessantes, eu não conhecia a ferramenta e dado o prazo acho que não aprenderia em tempo hábil para a entrega, mas entendi as duas solicitações.
+
+A primeira seria referente a infraestrutura necessária para que a aplicação funcione em produção. A aplicação possuiria serviços, o de login está associado um banco de dados e um servidor de cache, a API em laravel rodaria em uma instância podendo ser iniciada mais de uma, conforme a regra de carga definida no load balancer.
+
+
+A segunda seria o funcionamento da aplicação em si, no que diz a respeito do software desenvolvido.
