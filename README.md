@@ -38,6 +38,7 @@ DB_PASSWORD=
 
 - Run two Artisan CLI comands to configure **Passport**, necessary to auth access.
 > $ php artisan passport:install
+
 > $ php artisan key:generate
 
 - Now, you are able to run the API, uses the follow comand.
