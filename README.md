@@ -9,6 +9,13 @@ The project has two defaults branches of developing, using the git-flow methodol
 
 - develop: branch to developing environment.
 
+## Requirements
+
+Make sure you have installed:
+
+- `PHP 7.4.11`
+- `mysql 5.7.31`
+
 ## How install and Running Laravel API
 You can install, configures and run this project using Artisan CLI, follow these steps:
 
@@ -43,6 +50,11 @@ DB_PASSWORD=
 In the web application, you can access login page, register a new login and view you profile user data.
 
 Run the API, navegate to **/frontend** and open in your browser the file `'login.html'`
+
+## Notes
+
+- Questions was answers in questions.txt.
+- CHANGELOG.md file has notes about development.
 
 ## API Methods
 You need to add in all header:
