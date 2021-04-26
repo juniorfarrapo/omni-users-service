@@ -9,15 +9,41 @@ The project has two defaults branches of developing, using the git-flow methodol
 
 - develop: branch to developing environment.
 
-  
+## How install and Running Laravel API
+You can install, configures and run this project using Artisan CLI, follow these steps:
 
-## How install the API
+- Clone the Github repository and navegate to **/backend** folder.
+- Use composer to install dependencies.
+> $ composer install
+	
+- Configure MySql connection, duplicate file **.env.example** and rename to **.env**, add configurations follow your MySql configuration.
+ ````properties
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=
+````
 
-## Running API
+- Run Artisan CLI comand to configure database using migrations.
+> $ php artisan migrate
 
+- Run two Artisan CLI comands to configure **Passport**, necessary to auth access.
+> $ php artisan passport:install
+> $ php artisan key:generate
+
+- Now, you are able to run the API, uses the follow comand.
+> $ php artisan serve
+
+- The API are running in address: `http://127.0.0.1:8000`
+	
 ## Frontend app
-  
-  
+
+In the web application, you can access login page, register a new login and view you profile user data.
+
+Run the API, navegate to **/frontend** and open in your browser the file `'login.html'`
+
 ## API Methods
 You need to add in all header:
 ```json
